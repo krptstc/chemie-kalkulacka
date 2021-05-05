@@ -1,4 +1,12 @@
+import os
+
 from modules.molhmotnosti import *
+
+def vycistit_obrazovku():
+    if os.name == 'posix':
+        os.system('clear')
+    else:
+        os.system('cls')
 
 def ziskat_prvky(sloucenina):
     prvky = []

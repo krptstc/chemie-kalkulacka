@@ -1,9 +1,13 @@
-from modules.funkce       import *
+from modules.funkce import *
 
 if __name__ == '__main__':
-    zvolenaSloucenina = input("Zadejte sloučeninu: ")
-    prvkySlouceniny   = ziskat_prvky(zvolenaSloucenina)
-    molarniHmotnost   = ziskat_molarni_hmotnost(zvolenaSloucenina)
-    print('\nPrvky této sloučeniny:')
-    print(prvkySlouceniny)
-    print(f'Molární hmotnost sloučeniny: {molarniHmotnost} g/mol')
+    vycistit_obrazovku()
+    print('Zadejte levou stranu rovnice: ')
+    levaStrana = input()
+    levaStrana = levaStrana.replace(' ', '')
+    print('Zadejte pravou stranu rovnice: ')
+    pravaStrana = input()
+    pravaStrana = pravaStrana.replace(' ', '')
+
+    print(f'\nLevá strana: {levaStrana}')
+    print(f'\nPravá strana: {pravaStrana}')
