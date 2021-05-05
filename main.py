@@ -28,7 +28,9 @@ if __name__ == '__main__':
     vysledekVstup  = int(input())
     vysledekVystup = vysledekVstup * gramuVystupu / gramuVstupu
 
-    print(f'\nVýsledek: {vysledekVystup} g')
+    vykreslit_trojclenku(gramuVstupu, gramuVystupu, vysledekVstup, vysledekVystup)
+
+    print(f'\nVýsledek je {vysledekVystup} g.')
 
     # print(f'\nRovnice: {rovnice}')
     # print(f'Levá strana: {levaStrana}')
