@@ -2,14 +2,40 @@ from modules.funkce import *
 
 if __name__ == '__main__':
     vycistit_obrazovku()
+
     print('Zadejte levou stranu rovnice: ')
-    levaStrana = input()
-    levaStrana = levaStrana.replace(' ', '')
-    levaStrana = levaStrana.split('+')
+    levaStrana  = input()
+    levaStrana  = levaStrana.replace(' ', '')
+    levaStrana  = levaStrana.split('+')
+
     print('Zadejte pravou stranu rovnice: ')
     pravaStrana = input()
     pravaStrana = pravaStrana.replace(' ', '')
     pravaStrana = pravaStrana.split('+')
+    rovnice     = levaStrana + pravaStrana
 
-    print(f'\nLevá strana: {levaStrana}')
-    print(f'Pravá strana: {pravaStrana}')
+    vstupniLatka  = input('\nZadejte sloučeninu na vstupu: ')
+    vystupniLatka = input('Zadejte sloučeninu na výstupu: ')
+    poziceVstup   = rovnice.index(vstupniLatka)
+    poziceVystup  = rovnice.index(vystupniLatka)
+    hodnotaVstup  = ziskat_molarni_hmotnost(rovnice[poziceVstup])
+    hodnotaVystup = ziskat_molarni_hmotnost(rovnice[poziceVystup])
+
+    print(f'\nKolik máme gramů vstupní látky?')
+
+    gramuVstupu    = hodnotaVstup
+    gramuVystupu   = hodnotaVystup
+    vysledekVstup  = int(input())
+    vysledekVystup = vysledekVstup * gramuVystupu / gramuVstupu
+
+    print(f'\nVýsledek: {vysledekVystup} g')
+
+    # print(f'\nRovnice: {rovnice}')
+    # print(f'Levá strana: {levaStrana}')
+    # print(f'Pravá strana: {pravaStrana}')
+    # print(f'Pozice vstupu: {poziceVstup}')
+    # print(f'Pozice vstupu: {poziceVystup}')
+    # print(f'Hodnota vstupu: {hodnotaVstup}')
+    # print(f'Hodnota vstupu: {hodnotaVystup}')
+
+    input()
