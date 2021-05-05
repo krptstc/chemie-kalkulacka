@@ -34,9 +34,10 @@ def ziskat_molarni_hmotnost(sloucenina):
         vysledek += molarniHmotnost[prvek]
     return vysledek
 
-def vykreslit_trojclenku(vstupA, vstupB, vystupA, vystupB):
+def vykreslit_trojclenku(vstupA, vstupB, vystupA, vystupB, vstupLatka, vystupLatka):
     print('')
-    print(f'{vstupA} g ... {vystupA} g')
-    print(f'{vstupB} g ... x g')
-    print(f'\nx = {vstupB} * {vystupA} / {vstupA}')
-    print(f'x = {vstupB * vystupA / vstupA}')
+    print(f'  {vstupA} g {vstupLatka} ... {vystupA} g {vystupLatka}')
+    print(f'  {vstupB} g {vstupLatka} ... x g {vystupLatka}')
+    print('\n  x = ?')
+    print(f'  x = {vstupB} * {vystupA} / {vstupA}')
+    print(f'  x = {vstupB * vystupA / vstupA}')
