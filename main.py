@@ -2,43 +2,34 @@ from modules.funkce import *
 
 if __name__ == '__main__':
     vycistit_obrazovku()
-    print('')
 
-    print('  Zadejte levou stranu rovnice: ')
-    levaStrana  = input('  ')
-    levaStrana  = levaStrana.replace(' ', '')
-    levaStrana  = levaStrana.split('+')
+    print('Zadejte levou stranu rovnice: ')
+    levaStrana = ziskat_stranu()
+    print('Zadejte pravou stranu rovnice: ')
+    pravaStrana = ziskat_stranu()
 
-    print('  Zadejte pravou stranu rovnice: ')
-    pravaStrana = input('  ')
-    pravaStrana = pravaStrana.replace(' ', '')
-    pravaStrana = pravaStrana.split('+')
-    rovnice     = levaStrana + pravaStrana
+    rovnice = levaStrana + pravaStrana
 
-    vstupniLatka  = input('\n  Zadejte sloučeninu na vstupu: ')
-    vystupniLatka = input('  Zadejte sloučeninu na výstupu: ')
+    vstupniLatka  = input('\nZadejte sloučeninu na vstupu: ')
+    vystupniLatka = input('Zadejte sloučeninu na výstupu: ')
     poziceVstup   = rovnice.index(vstupniLatka)
     poziceVystup  = rovnice.index(vystupniLatka)
     hodnotaVstup  = ziskat_molarni_hmotnost(rovnice[poziceVstup])
     hodnotaVystup = ziskat_molarni_hmotnost(rovnice[poziceVystup])
 
-    print(f'\n  Kolik máme gramů vstupní látky?')
+    print(f'\nKolik máme gramů vstupní látky?')
 
     gramuVstupu    = hodnotaVstup
     gramuVystupu   = hodnotaVystup
-    vysledekVstup  = int(input('  '))
-    vysledekVystup = vysledekVstup * gramuVystupu / gramuVstupu
+    vysledekVstup  = int(input())
 
-    vykreslit_trojclenku(gramuVstupu, gramuVystupu, vysledekVstup, vysledekVystup, vstupniLatka, vystupniLatka)
+    trojclenka = [
+        hodnotaVstup, hodnotaVystup, vysledekVstup
+    ]
 
-    print(f'\n  Výsledek je {vysledekVystup} g.')
+    vysledekVystup = vypocitat_trojclenku(trojclenka)
+    vykreslit_trojclenku(trojclenka, vstupniLatka, vystupniLatka)
 
-    # print(f'\nRovnice: {rovnice}')
-    # print(f'Levá strana: {levaStrana}')
-    # print(f'Pravá strana: {pravaStrana}')
-    # print(f'Pozice vstupu: {poziceVstup}')
-    # print(f'Pozice vstupu: {poziceVystup}')
-    # print(f'Hodnota vstupu: {hodnotaVstup}')
-    # print(f'Hodnota vstupu: {hodnotaVystup}')
+    print(f'\nVýsledek je {vysledekVystup} g.')
 
     input()
