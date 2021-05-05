@@ -5,9 +5,11 @@ if __name__ == '__main__':
     print('Zadejte levou stranu rovnice: ')
     levaStrana = input()
     levaStrana = levaStrana.replace(' ', '')
+    levaStrana = levaStrana.split('+')
     print('Zadejte pravou stranu rovnice: ')
     pravaStrana = input()
     pravaStrana = pravaStrana.replace(' ', '')
+    pravaStrana = pravaStrana.split('+')
 
     print(f'\nLevá strana: {levaStrana}')
-    print(f'\nPravá strana: {pravaStrana}')
+    print(f'Pravá strana: {pravaStrana}')
